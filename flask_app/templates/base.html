@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦄XTINA.CODES👩‍💻</title>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Codystar&family=Barlow+Condensed&family=Lobster&display=swap" rel="stylesheet">
+    <!-- STATIC FILES -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <img src="{{ url_for('static', filename='my_img.png') }}"> -->
+    <!-- <script type="text/javascript" defer src="{{ url_for('static', filename='script.js') }}"></script> -->
+</head>
+<body>
+    <header>
+        <h1 class="accent">
+            XTINA.CODES
+        </h1>
+    </header>
+    <nav>
+        <a href="/read">
+            Home
+        </a>
+        <a href="https://github.com/xtina-lt" target="#">
+            GitHub
+        </a>
+    </nav>
+    <div class= "container">
+        <section>
+            <h3>
+                About Me:
+            </h3>
+            <ul>
+                <li>
+                    <img id="me" class="medium_fade" src="{{ url_for('static', filename='me.jpg') }}">
+                </li>
+                <li>
+                    <h3>
+                        Contact
+                    </h3>
+                </li>
+                <li>
+                    Email: xtina@xtina.codes
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <h3>
+                        About Me:
+                    </h3>
+                </li>
+                <li>
+                    I am a developer specializing in: HTML, CSS, JavaScript, and Python.
+                </li>
+                <li>
+                    I like nature, being festive, and spending time with loved ones (James and Peanut). 
+                </li>
+            </ul>
+        </section>
+        <main>
+            {%block main%}
+            {%endblock%}
+        </main>
+    </div>
+    <footer>
+        &copy; Copyright. All Rights Reserved.
+    </footer>
+</body>
+</html>
