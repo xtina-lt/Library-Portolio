@@ -1,4 +1,7 @@
-{%extends 'base.html'%}
+{%extends 'base_side.html'%}
+{%block header%}
+XTINA.CODES
+{%endblock%}
 {%block main%}
 <h2>
     Lets Talk Coding
@@ -48,13 +51,26 @@
         Being able to create a prototype and read code in different languages allows for versitility in any project. 
         Learning the basics in many languages enhances a larger picture to be taken from complex problems. 
         This is beneficial for unique solutions with a greater over all control of the product.
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=1>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[1].count}}">
+        </form>
     </div>
 <h3>
     Request Response Cycle
 </h3>
     <div>
-        Client computers and other internet-connected devices <b>request</b> access to a web page. This can be done by inputing URL, clicking links, submitting forms, or refreshing. Client devices talk to servers that store web pages or applications. Then, the application's servers interpret what information is neccessary, sometimes this is done with routing. Finally the application's server sends the data back to the client. This is said to be the <b>response</b>.
+        Client computers and other internet-connected devices <b>request</b> access to a web page. 
+        This can be done by inputing URL, clicking links, submitting forms, or refreshing. 
+        Client devices talk to servers that store web pages or applications. 
+        Then, the application's servers interpret what information is neccessary, sometimes this is done with routing. 
+        Finally the application's server sends the data back to the client. This is said to be the <b>response</b>.
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=2>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[2].count}}">
+        </form>
     </div>
+    
 
 <h3>
     Front-End
@@ -66,6 +82,10 @@
         <br>
         <br>
         Examples: <b>Hypertext Markup Language(HTML)</b>, <b>Cascading Style Sheets(CSS)</b>, and <b>JavaScript(JS)</b> frameworks.
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=3>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[3].count}}">
+        </form>
     </div>
 
 <h3>
@@ -81,6 +101,10 @@
         <br>
         <br>
         <b>Examples: Python, Java, Ruby, and C#.</b>
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=4>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[4].count}}">
+        </form>
     </div>
 
 <h3>
@@ -97,6 +121,10 @@
         <br>
         <br>
         <b>Examples: SQL, MySQL, MangoDB.</b>
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=5>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[5].count}}">
+        </form>
     </div>
 
 <h3>
@@ -110,6 +138,10 @@
         <b>Variables</b> and <b>attributes</b> are created for things hat real world objects <b>have</b>. 
         <b>Methods</b> and <b>functions</b> are created to represent real world objects' <b>behaviors</b>. 
         Complex planning and implimentation is neccessary to execute this type of programming.
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=6>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[6].count}}">
+        </form>
     </div>
 
 <h3>
@@ -120,6 +152,10 @@
         The computer reads from top to bottom. 
         This is how we write out our code. 
         This is sequential.
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=7>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[7].count}}">
+        </form>
     </div>
 
 <h3>
@@ -132,6 +168,10 @@
         Then, <b>controllers</b> are files that have routes and direct the server to get information from <b>models</b> or load views. 
         This tells where to go and what information to grab. 
         Finally, <b>views</b> are files that the client sees directly. An example of this is HTML that places things on a webpage. <b>Jinja</b> is a great templating engine to use alongside Python.
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=8>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[8].count}}">
+        </form>
     </div>
 
 <h3>
@@ -143,11 +183,15 @@
         This can be done by creating data <b>dictionaries</b>. 
         Encapsulation of <b>SQL quieries</b> and hiding them in objects is how this is completed.
         <b>ORM</b>, essentially, connects an object in memory to a <b>relational database</b>. 
+        <form class="like_form" method="POST">
+            <input type="hidden" name="like_id" value=9>
+            <input type="submit" class="small_submit like_count" value="🤍 {{likes[9].count}}">
+        </form>
     </div>
 <div>
     Incase nobody told you today...
     <br>YOU ARE AWESOME!!</br>
-    <img id="logo"  src="{{ url_for('static', filename='logo-black.png') }}">
+    <img class="logo"  src="{{ url_for('static', filename='logo-black.png') }}">
     <br>
     <a href="https://github.com/xtina-lt" target="#">
         Check out my work!

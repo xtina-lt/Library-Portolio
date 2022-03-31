@@ -8,27 +8,46 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Codystar&family=Barlow+Condensed&family=Lobster&display=swap" rel="stylesheet">
     <!-- STATIC FILES -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_side.css') }}">
     <!-- <img src="{{ url_for('static', filename='my_img.png') }}"> -->
-    <!-- <script type="text/javascript" defer src="{{ url_for('static', filename='script.js') }}"></script> -->
+
 </head>
 <body>
     <header>
         <h1 class="accent">
-            XTINA.CODES
+            {%block header%}
+            {%endblock%}
         </h1>
     </header>
     <nav>
-        <a href="/read">
+        <a href="/">
             Home
         </a>
-        <a href="https://github.com/xtina-lt" target="#">
-            GitHub
+        <a href="/projects">
+            Projects
         </a>
+        <a href="/gifshop">
+            GifShop
+        </a>
+        {%if session["logged_in"]%}
+        <a href="/dashboard">
+            Dashboard
+        </a>
+        <span id="stars">
+            💜{{session["logged_in"]["stars"]}}
+        </span>
+        <a href="/logout">
+            Logout
+        </a>
+        {%else%}
+        <a href="/login">
+            Login
+        </a>
+        {% endif %}
     </nav>
     <div class= "container">
         <section>
-            <h3>
+            <h3 class="no-background">
                 About Me:
             </h3>
             <ul>
@@ -36,7 +55,7 @@
                     <img id="me" class="medium_fade" src="{{ url_for('static', filename='me.jpg') }}">
                 </li>
                 <li>
-                    <h3>
+                    <h3 class="no-background">
                         Contact
                     </h3>
                 </li>
@@ -46,7 +65,7 @@
             </ul>
             <ul>
                 <li>
-                    <h3>
+                    <h3 class="no-background">
                         About Me:
                     </h3>
                 </li>
@@ -56,9 +75,16 @@
                 <li>
                     I like nature, being festive, and spending time with loved ones (James and Peanut). 
                 </li>
+                <li>
+                    <a href="https://github.com/xtina-lt" target="#">
+                        <h3 class="no-background">
+                            GitHub
+                        </h3>
+                    </a>
+                </li>
             </ul>
         </section>
-        <main>
+        <main id="main">
             {%block main%}
             {%endblock%}
         </main>
@@ -66,5 +92,7 @@
     <footer>
         &copy; Copyright. All Rights Reserved.
     </footer>
+    <script type="text/javascript" defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
