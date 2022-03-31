@@ -267,8 +267,9 @@ img {
         border-radius: 0;
     }
 
+/* landscape and phone */
 @media only screen and (max-height: 575.98px) and (orientation: landscape) {
-    main{
+    main, .continer{
         display: block;
         /* styling*/
         color: rgba(0, 0, 0, 0.6s); /* top: left right, bottom: left, right */
@@ -300,11 +301,32 @@ img {
     body, input, select, textarea, select:focus{
         font-size: 5vh;
     }
+    section{
+        max-height: 63vh;
+        height: fit-content;
+        overflow: scroll;
+    }
 }
 
-
+/* phone */
 @media only screen and (max-width: 450px) {
-    main{
+    html::-webkit-scrollbar, main::-webkit-scrollbar, main > div::-webkit-scrollbar, textarea::-webkit-scrollbar, header::-webkit-scrollbar, body::-webkit-scrollbar, .container::-webkit-scrollbar{
+        display: none;
+    }
+    header{
+        overflow: scroll;
+        scrollbar-width: none;
+    }
+    body, .container, section, main{
+        display: block;
+        max-height: 100vh;
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    section{
+        display: inline;
+    }
+    main, section{
         display: block;
         /* styling*/
         color: rgba(0, 0, 0, 0.6s); /* top: left right, bottom: left, right */
@@ -321,7 +343,6 @@ img {
     }
     main > div{
         /* background and set */
-        background-color: rgba(240, 248, 255, 0.3);
         border-radius: 3vh;
         /* width height */
         height: max-content;
@@ -334,6 +355,10 @@ img {
         /* scroll */
         overflow-y: scroll;
         scrollbar-width: none;
+    }
+    table, tr, th, td{
+        max-width: 94vw;
+        margin: 0 auto;
     }
 }
 

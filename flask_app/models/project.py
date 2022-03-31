@@ -25,12 +25,21 @@ class Project:
     
     @classmethod
     def select_all_json(cls):
-        query="SELECT * FROM projects"
+        query="SELECT *, count(users_likes.user_id) AS likes_count FROM projects JOIN likes ON likes.id = projects.like_id LEFT JOIN users_likes ON users_likes.like_id = likes.id GROUP BY likes.id"
         results = connectToMySQL(cls.db).query_db(query)
-        if results:
-            return[i for i in results]
-        else:
-            return [{"id": None}]
+        x=[]
+        for i in results:
+            proj_data = {
+                "id" : i["id"],
+                "name" : i["name"],
+                "description" : i["description"],
+                "git" : i["git"],
+                "path" : i["path"],
+                "url" : i["url"],
+                "like" : {"id": i["likes.id"],"count": i['likes_count']}
+            }
+            x.append( proj_data )
+        return x
     
     @classmethod
     def select_all(cls):

@@ -7,7 +7,7 @@ from flask_app.models.like import Like
 '''CREATE PROJECT'''
 @app.route("/projects/fetch")
 def select_projects_py():
-    db_projects = Project.select_all()
+    db_projects = Project.select_all_json()
     db_values= [v for d in db_projects for v in d.values()]
     response = requests.get('https://api.github.com/users/xtina-lt/repos')
     response = response.json()
