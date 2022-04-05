@@ -61,6 +61,6 @@ def test_Form():
             like=Like.select_one({"id": request.form["like_id"]})
             return jsonify(stars = session["logged_in"]["stars"], num=like.count)
         else:
-            return jsonify(message="not logged in")
+            return jsonify(message="Try logging in💜")
     else:
-        return jsonify(message="not logged in")
+        return jsonify(message="Try logging in💜")

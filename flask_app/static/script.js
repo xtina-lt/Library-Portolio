@@ -41,6 +41,8 @@ for(let i = 0; i < like_form.length; i++){
                     const stars = document.getElementById("stars")
                     stars.innerHTML = `💜 ${data['stars']}` 
                     like_count[i].value = `💜 ${data['num']}`
+                } else{
+                    alert(data['message'])
                 }
             })
         }
